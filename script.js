@@ -1,5 +1,5 @@
 
-const INSTAGRAM_USERNAME = "frednesto_/"; 
+const INSTAGRAM_USERNAME = "direct/t/119369372783761/"; 
 const LOADING_DURATION = 2000; // 2 seconds
 const CONTRACT_LOADING_DURATION = 1500; // 1.5 seconds
 const COUNTDOWN_DURATION = 3; // 3 seconds
@@ -216,4 +216,5 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========================================
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
+
 }
