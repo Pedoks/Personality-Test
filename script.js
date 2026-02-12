@@ -176,7 +176,27 @@ function startCountdown() {
 // REDIRECT TO INSTAGRAM
 // ========================================
 function redirectToInstagram() {
-    window.location.href = `https://instagram.com/${INSTAGRAM_USERNAME}`;
+    const threadId = "119369372783761";
+    
+    // Detect if it's mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // Try Instagram app protocol first
+        const appUrl = `instagram://direct?thread=${threadId}`;
+        const webUrl = `https://instagram.com/direct/t/${threadId}/`;
+        
+        // Attempt to open app
+        window.location.href = appUrl;
+        
+        // If app doesn't open, redirect to web after 2 seconds
+        setTimeout(() => {
+            window.location.href = webUrl;
+        }, 2000);
+    } else {
+        // Desktop - just use web URL
+        window.location.href = `https://instagram.com/direct/t/${threadId}/`;
+    }
 }
 
 // ========================================
@@ -216,5 +236,4 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========================================
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
-
 }
