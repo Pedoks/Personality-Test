@@ -1,5 +1,4 @@
-
-const INSTAGRAM_USERNAME = "direct/t/119369372783761/"; 
+const INSTAGRAM_USERNAME = "frednesto_/"; 
 const LOADING_DURATION = 2000; // 2 seconds
 const CONTRACT_LOADING_DURATION = 1500; // 1.5 seconds
 const COUNTDOWN_DURATION = 3; // 3 seconds
@@ -176,27 +175,7 @@ function startCountdown() {
 // REDIRECT TO INSTAGRAM
 // ========================================
 function redirectToInstagram() {
-    const threadId = "119369372783761";
-    
-    // Detect if it's mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-        // Try Instagram app protocol first
-        const appUrl = `instagram://direct?thread=${threadId}`;
-        const webUrl = `https://instagram.com/direct/t/${threadId}/`;
-        
-        // Attempt to open app
-        window.location.href = appUrl;
-        
-        // If app doesn't open, redirect to web after 2 seconds
-        setTimeout(() => {
-            window.location.href = webUrl;
-        }, 2000);
-    } else {
-        // Desktop - just use web URL
-        window.location.href = `https://instagram.com/direct/t/${threadId}/`;
-    }
+    window.location.href = `https://instagram.com/${INSTAGRAM_USERNAME}`;
 }
 
 // ========================================
