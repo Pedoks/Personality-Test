@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Test</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="particles-container"></div>
+    
+   
+    <div class="container" id="mainContainer">
+        <h1>Personality Test</h1>
+        <p class="subtitle">Answer honestly for accurate results based on psychological research</p>
+        
+       
+        <form id="compatibilityForm">
+            <div class="form-group">
+                <label for="program">College Program</label>
+                <input type="text" id="program" name="program" placeholder="Enter your college program" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="color">Favorite Color</label>
+                <input type="text" id="color" name="color" placeholder="Enter your favorite color" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="movie">Favorite Movie</label>
+                <input type="text" id="movie" name="movie" placeholder="Enter your favorite movie" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="series">Favorite TV Series</label>
+                <input type="text" id="series" name="series" placeholder="Enter your favorite TV series" required>
+            </div>
+            
+            <button type="submit" class="btn-primary">Analyze Personality</button>
+        </form>
+    </div>
+    
+    
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <!-- Loading Phase -->
+            <div class="modal-content" id="loadingPhase">
+                <h2>Processing personality assessment...</h2>
+                <div class="loading-bar-container">
+                    <div class="loading-bar" id="loadingBar"></div>
+                </div>
+            </div>
+            
+            <!-- Question Phase -->
+            <div class="modal-content hidden" id="questionPhase">
+                <h2 class="valentine-question">Will you be my Valentine?</h2>
+                
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="answer" value="yes" class="answer-checkbox">
+                        <span class="checkbox-text">Yes, I agree to be his Valentine on February 14, 2026. Details about food and location must be discussed first.</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="answer" value="no" class="answer-checkbox">
+                        <span class="checkbox-text">No, I reject this opportunity.</span>
+                    </label>
+                </div>
+                
+                <p class="error-message hidden" id="errorMessage">⚠️ Server Error 143: Heart Not Found.</p>
+                
+                <button class="btn-submit" id="submitAnswer">Submit</button>
+            </div>
+            
+            <!-- Final Phase -->
+            <div class="modal-content hidden" id="finalPhase">
+                <h2 id="finalMessage">Finalizing Valentine Contract...</h2>
+                <p class="countdown hidden" id="countdown"></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- External JavaScript  -->
+    <script src="script.js"></script>
+</body>
+</html>
