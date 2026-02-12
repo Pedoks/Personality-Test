@@ -1,3 +1,4 @@
+
 const INSTAGRAM_USERNAME = "frednesto_/"; 
 const LOADING_DURATION = 2000; // 2 seconds
 const CONTRACT_LOADING_DURATION = 1500; // 1.5 seconds
